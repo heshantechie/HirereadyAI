@@ -13,7 +13,7 @@ export const InterviewCoachLanding: React.FC = () => {
     "name": "Talvorax AI Interview Coach",
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "Web",
-    "description": "Practice with AI mock interviews and get real-time feedback on your answers, tone, and confidence. Start your mock interview free.",
+    "description": "Practice real interview questions with AI feedback on your answers. Start your free mock interview today.",
     "offers": {
       "@type": "AggregateOffer",
       "priceCurrency": "INR",
@@ -86,7 +86,7 @@ export const InterviewCoachLanding: React.FC = () => {
     <div className="min-h-screen bg-white font-sans">
       <SEO 
         title="AI Mock Interview Online: Practice & Prepare | Talvorax"
-        description="Practice with AI mock interviews and get real-time feedback on your answers, tone, and confidence. Start your mock interview free."
+        description="Practice real interview questions with AI feedback on your answers. Start your free mock interview today."
         url={`${SITE_URL}/interview-coach`}
         schema={schema}
         faqSchema={faqSchema}

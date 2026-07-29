@@ -3,6 +3,8 @@ import { getLegalDocuments, LegalDocument } from '../lib/documents';
 import { Navbar } from '../components/Navbar';
 import { Footer } from '../components/Footer';
 import { LegalDocumentViewer } from '../components/LegalDocumentViewer';
+import { SEO } from '../components/SEO';
+import { SITE_URL } from '../constants/site';
 
 export const Legal: React.FC = () => {
   const documents = getLegalDocuments();
@@ -18,6 +20,12 @@ export const Legal: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-white font-sans flex flex-col">
+      <SEO
+        title="Legal & Privacy — Talvorax"
+        description="Talvorax's Terms of Service, Privacy Policy, and legal policies for our AI career-prep platform."
+        url={`${SITE_URL}/legal`}
+        noindex
+      />
       <Navbar />
       
       <main className="flex-1 pt-32 pb-20 px-6 max-w-6xl mx-auto w-full">

@@ -128,7 +128,7 @@ export const PricingLanding: React.FC = () => {
     <div className="min-h-screen font-sans bg-white pt-24 text-slate-900">
       <SEO 
         title="Simple, Transparent Pricing | Talvorax"
-        description="Compare free and Pro plans for AI resume analysis, mock interviews, and speaking practice. Start free — upgrade when you're ready."
+        description="Start free today. Pro plans from ₹299/month launch soon, including the Placement Season Pass — see full Talvorax pricing."
         url={`${SITE_URL}/pricing`}
         faqSchema={faqSchema}
       />

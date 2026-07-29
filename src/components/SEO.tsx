@@ -8,6 +8,8 @@ interface SEOProps {
   ogImage?: string;
   schema?: any;
   faqSchema?: any;
+  /** When true, emit <meta name="robots" content="noindex, follow"> (e.g. legal pages). */
+  noindex?: boolean;
 }
 
 export const SEO: React.FC<SEOProps> = ({
@@ -17,6 +19,7 @@ export const SEO: React.FC<SEOProps> = ({
   ogImage = DEFAULT_OG_IMAGE,
   schema,
   faqSchema,
+  noindex = false,
 }) => {
   useEffect(() => {
     document.title = title;
@@ -35,6 +38,20 @@ export const SEO: React.FC<SEOProps> = ({
 
     // Standard meta
     setMeta('description', description);
+
+    // Robots — managed every render so a noindex flag from one route (e.g. /legal)
+    // never leaks onto the next indexable route during client-side navigation.
+    let robotsEl = document.querySelector('meta[name="robots"]');
+    if (noindex) {
+      if (!robotsEl) {
+        robotsEl = document.createElement('meta');
+        robotsEl.setAttribute('name', 'robots');
+        document.head.appendChild(robotsEl);
+      }
+      robotsEl.setAttribute('content', 'noindex, follow');
+    } else if (robotsEl) {
+      robotsEl.remove();
+    }
 
     // Open Graph
     setMeta('og:type', 'website', true);
@@ -90,7 +107,7 @@ export const SEO: React.FC<SEOProps> = ({
       faqScriptEl.remove();
     }
 
-  }, [title, description, url, ogImage, schema, faqSchema]);
+  }, [title, description, url, ogImage, schema, faqSchema, noindex]);
 
   return null;
 };

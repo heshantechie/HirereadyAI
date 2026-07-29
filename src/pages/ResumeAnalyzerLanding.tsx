@@ -12,7 +12,7 @@ export const ResumeAnalyzerLanding: React.FC = () => {
     "name": "Talvorax AI Resume Analyzer",
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "Web",
-    "description": "Beat the ATS with our AI resume analyzer — optimize keywords and land more interviews. Scan your resume free now.",
+    "description": "Get an instant ATS resume score with AI-powered feedback. Free 3 scans/month — check your resume now.",
     "offers": {
       "@type": "AggregateOffer",
       "priceCurrency": "INR",
@@ -85,7 +85,7 @@ export const ResumeAnalyzerLanding: React.FC = () => {
     <div className="min-h-screen bg-white font-sans">
       <SEO 
         title="AI Resume Analyzer: Pass the ATS & Get Hired | Talvorax"
-        description="Beat the ATS with our AI resume analyzer — optimize keywords and land more interviews. Scan your resume free now."
+        description="Get an instant ATS resume score with AI-powered feedback. Free 3 scans/month — check your resume now."
         url={`${SITE_URL}/resume-analyzer`}
         schema={schema}
         faqSchema={faqSchema}

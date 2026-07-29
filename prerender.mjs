@@ -77,6 +77,17 @@ function injectAll(html, routeData) {
     out = out.replace('</head>', `  ${descTag}\n</head>`);
   }
 
+  // 2b. Robots meta — only for routes flagged noindex (e.g. /legal). Indexable
+  //     routes get no robots tag (default is index,follow).
+  if (routeData.noindex) {
+    const robotsTag = `<meta name="robots" content="noindex, follow" />`;
+    if (out.includes('name="robots"')) {
+      out = out.replace(/<meta name="robots"[^>]*>/i, robotsTag);
+    } else {
+      out = out.replace('</head>', `  ${robotsTag}\n</head>`);
+    }
+  }
+
   // 3. Canonical — replace if exists, otherwise inject
   const canonicalTag = buildCanonicalTag(canonical);
   if (out.includes('rel="canonical"')) {
@@ -138,7 +149,7 @@ function prerender() {
     console.log(`  ✓ Saved ${path.relative(distPath, filePath)}`);
   }
 
-  console.log('\nPrerender complete. All 11 routes have static HTML with:\n' +
+  console.log(`\nPrerender complete. All ${Object.keys(SEO_DATA).length} routes have static HTML with:\n` +
     '  • Unique <title> + <meta description>\n' +
     '  • <link rel="canonical">\n' +
     '  • Open Graph + Twitter Card tags\n' +

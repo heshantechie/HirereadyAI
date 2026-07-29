@@ -13,7 +13,7 @@ export const MinuteTalkLanding: React.FC = () => {
     "name": "Talvorax AI Minute Talk",
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "Web",
-    "description": "Improve your communication skills with AI — cut filler words and speak with confidence. Try Minute Talk free today.",
+    "description": "Improve your speaking clarity and confidence with AI-powered practice sessions. Try Minute Talk free.",
     "offers": {
       "@type": "AggregateOffer",
       "priceCurrency": "INR",
@@ -89,7 +89,7 @@ export const MinuteTalkLanding: React.FC = () => {
     <div className="min-h-screen bg-white font-sans">
       <SEO 
         title="AI Speaking Practice Tool: Improve Communication | Talvorax"
-        description="Improve your communication skills with AI — cut filler words and speak with confidence. Try Minute Talk free today."
+        description="Improve your speaking clarity and confidence with AI-powered practice sessions. Try Minute Talk free."
         url={`${SITE_URL}/minute-talk`}
         schema={schema}
         faqSchema={faqSchema}

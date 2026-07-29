@@ -163,7 +163,7 @@ ${FOOTER}`
 
   '/resume-analyzer': {
     title: 'AI Resume Analyzer: Pass the ATS & Get Hired | Talvorax',
-    description: 'Beat the ATS with our AI resume analyzer — optimize keywords and land more interviews. Scan your resume free now.',
+    description: 'Get an instant ATS resume score with AI-powered feedback. Free 3 scans/month — check your resume now.',
     canonical: `${BASE_URL}/resume-analyzer`,
     ogImage: OG_IMAGE,
     schemas: [
@@ -173,7 +173,7 @@ ${FOOTER}`
         "name": "Talvorax AI Resume Analyzer",
         "applicationCategory": "BusinessApplication",
         "operatingSystem": "Web",
-        "description": "Beat the ATS with our AI resume analyzer — optimize keywords and land more interviews. Scan your resume free now.",
+        "description": "Get an instant ATS resume score with AI-powered feedback. Free 3 scans/month — check your resume now.",
         "url": `${BASE_URL}/resume-analyzer`,
         "offers": { "@type": "AggregateOffer", "priceCurrency": "INR", "lowPrice": "0", "highPrice": "999", "offerCount": "4", "availability": "https://schema.org/InStock" }
       },
@@ -242,7 +242,7 @@ ${FOOTER}`
 
   '/interview-coach': {
     title: 'AI Mock Interview Online: Practice & Prepare | Talvorax',
-    description: 'Practice with AI mock interviews and get real-time feedback on your answers, tone, and confidence. Start your mock interview free.',
+    description: 'Practice real interview questions with AI feedback on your answers. Start your free mock interview today.',
     canonical: `${BASE_URL}/interview-coach`,
     ogImage: OG_IMAGE,
     schemas: [
@@ -252,7 +252,7 @@ ${FOOTER}`
         "name": "Talvorax AI Interview Coach",
         "applicationCategory": "BusinessApplication",
         "operatingSystem": "Web",
-        "description": "Practice with AI mock interviews and get real-time feedback on your answers, tone, and confidence. Start your mock interview free.",
+        "description": "Practice real interview questions with AI feedback on your answers. Start your free mock interview today.",
         "url": `${BASE_URL}/interview-coach`,
         "offers": { "@type": "AggregateOffer", "priceCurrency": "INR", "lowPrice": "0", "highPrice": "999", "offerCount": "4", "availability": "https://schema.org/InStock" }
       },
@@ -321,7 +321,7 @@ ${FOOTER}`
 
   '/minute-talk': {
     title: 'AI Speaking Practice Tool: Improve Communication | Talvorax',
-    description: 'Improve your communication skills with AI — cut filler words and speak with confidence. Try Minute Talk free today.',
+    description: 'Improve your speaking clarity and confidence with AI-powered practice sessions. Try Minute Talk free.',
     canonical: `${BASE_URL}/minute-talk`,
     ogImage: OG_IMAGE,
     schemas: [
@@ -331,7 +331,7 @@ ${FOOTER}`
         "name": "Talvorax Minute Talk",
         "applicationCategory": "BusinessApplication",
         "operatingSystem": "Web",
-        "description": "Improve your communication skills with AI — cut filler words and speak with confidence. Try Minute Talk free today.",
+        "description": "Improve your speaking clarity and confidence with AI-powered practice sessions. Try Minute Talk free.",
         "url": `${BASE_URL}/minute-talk`,
         "offers": { "@type": "AggregateOffer", "priceCurrency": "INR", "lowPrice": "0", "highPrice": "999", "offerCount": "4", "availability": "https://schema.org/InStock" }
       },
@@ -461,7 +461,7 @@ ${FOOTER}`
 
   '/pricing': {
     title: 'Talvorax Pricing: Simple Plans for Job Seekers',
-    description: 'Compare free and Pro plans for AI resume analysis, mock interviews, and speaking practice. Start free — upgrade when you\'re ready.',
+    description: 'Start free today. Pro plans from ₹299/month launch soon, including the Placement Season Pass — see full Talvorax pricing.',
     canonical: `${BASE_URL}/pricing`,
     ogImage: OG_IMAGE,
     schemas: [
@@ -858,6 +858,23 @@ ${FOOTER}`
       <a href="/signup">Create Free Account</a>
     </nav>
   </section>
+</main>
+${FOOTER}`
+  },
+
+  '/legal': {
+    title: 'Legal & Privacy — Talvorax',
+    description: 'Talvorax\'s Terms of Service, Privacy Policy, and legal policies for our AI career-prep platform.',
+    canonical: `${BASE_URL}/legal`,
+    ogImage: OG_IMAGE,
+    noindex: true,
+    schemas: [],
+    body: `${NAV}
+<main>
+  <header>
+    <h1>Legal Documents</h1>
+    <p>Please review our legal policies, terms, and agreements. We believe in transparency and want to ensure you fully understand how Talvorax operates. Read our Terms of Service, Privacy Policy, Data Processing Agreement, Mutual NDA, and Security Overview.</p>
+  </header>
 </main>
 ${FOOTER}`
   }
