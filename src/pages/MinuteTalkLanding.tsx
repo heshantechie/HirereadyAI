@@ -13,7 +13,15 @@ export const MinuteTalkLanding: React.FC = () => {
     "name": "Talvorax AI Minute Talk",
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "Web",
-    "description": "Improve communication skills with AI. Eliminate filler words and speak confidently."
+    "description": "Improve your communication skills with AI — cut filler words and speak with confidence. Try Minute Talk free today.",
+    "offers": {
+      "@type": "AggregateOffer",
+      "priceCurrency": "INR",
+      "lowPrice": "0",
+      "highPrice": "999",
+      "offerCount": "4",
+      "availability": "https://schema.org/InStock"
+    }
   };
 
   const faqSchema = {
@@ -81,7 +89,7 @@ export const MinuteTalkLanding: React.FC = () => {
     <div className="min-h-screen bg-white font-sans">
       <SEO 
         title="AI Speaking Practice Tool: Improve Communication | Talvorax"
-        description="Improve communication skills with AI. Eliminate filler words and speak confidently."
+        description="Improve your communication skills with AI — cut filler words and speak with confidence. Try Minute Talk free today."
         url={`${SITE_URL}/minute-talk`}
         schema={schema}
         faqSchema={faqSchema}

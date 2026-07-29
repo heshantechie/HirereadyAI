@@ -2,5 +2,7 @@ User-agent: *
 Allow: /
 Disallow: /api/
 Disallow: /dashboard/
+Disallow: /login
+Disallow: /signup
 
 Sitemap: https://www.talvorax.com/sitemap.xml

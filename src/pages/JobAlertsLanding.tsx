@@ -396,6 +396,23 @@ const AlertItem: React.FC<{
 // ─── Main JobAlertsLanding Component ──────────────────────────────────────────
 
 export const JobAlertsLanding: React.FC = () => {
+  const jobAlertsSchema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Talvorax Job Alerts",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "description": "Get instant AI job alerts matched to your resume and skills. Never miss the right role again. Set up your free alerts now.",
+    "offers": {
+      "@type": "AggregateOffer",
+      "priceCurrency": "INR",
+      "lowPrice": "0",
+      "highPrice": "999",
+      "offerCount": "4",
+      "availability": "https://schema.org/InStock"
+    }
+  };
+
   const { session } = useAuth();
   const [activeTab, setActiveTab] = useState<'alerts' | 'resume'>('alerts');
   const [token, setToken] = useState<string | null>(null);
@@ -615,8 +632,9 @@ export const JobAlertsLanding: React.FC = () => {
       <div className="min-h-screen font-sans relative overflow-x-hidden bg-white">
         <SEO 
           title="Job Alerts & AI Matcher | Talvorax"
-          description="Sign up for AI job alerts to get customized role recommendations matched to your resume automatically."
+          description="Get instant AI job alerts matched to your resume and skills. Never miss the right role again. Set up your free alerts now."
           url={`${SITE_URL}/job-alerts`}
+          schema={jobAlertsSchema}
         />
         <Navbar />
         <div className="relative z-10 flex flex-col items-center justify-center min-h-screen gap-6 px-4 text-center">

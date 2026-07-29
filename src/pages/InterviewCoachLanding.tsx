@@ -13,7 +13,15 @@ export const InterviewCoachLanding: React.FC = () => {
     "name": "Talvorax AI Interview Coach",
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "Web",
-    "description": "Practice interviews with AI and get real-time feedback. Improve answers, tone, and confidence."
+    "description": "Practice with AI mock interviews and get real-time feedback on your answers, tone, and confidence. Start your mock interview free.",
+    "offers": {
+      "@type": "AggregateOffer",
+      "priceCurrency": "INR",
+      "lowPrice": "0",
+      "highPrice": "999",
+      "offerCount": "4",
+      "availability": "https://schema.org/InStock"
+    }
   };
 
   const faqSchema = {
@@ -78,7 +86,7 @@ export const InterviewCoachLanding: React.FC = () => {
     <div className="min-h-screen bg-white font-sans">
       <SEO 
         title="AI Mock Interview Online: Practice & Prepare | Talvorax"
-        description="Practice interviews with AI and get real-time feedback. Improve answers, tone, and confidence."
+        description="Practice with AI mock interviews and get real-time feedback on your answers, tone, and confidence. Start your mock interview free."
         url={`${SITE_URL}/interview-coach`}
         schema={schema}
         faqSchema={faqSchema}

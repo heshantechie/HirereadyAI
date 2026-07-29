@@ -39,7 +39,7 @@ const FOOTER = `
     <a href="/about">About Us</a>
     <a href="/contact">Contact</a>
   </nav>
-  <p>&#169; 2025 Talvorax. All rights reserved. AI career tools to help you land your dream job.</p>
+  <p>&#169; ${new Date().getFullYear()} Talvorax. All rights reserved. AI career tools to help you land your dream job.</p>
 </footer>`;
 
 const ORG_SCHEMA = {
@@ -69,7 +69,7 @@ export const SEO_DATA = {
 
   '/': {
     title: 'AI Career Tools to Land Your Dream Job | Talvorax',
-    description: 'Supercharge your job search with AI resume analyzer, mock interview coach, and speaking practice. Try Talvorax free.',
+    description: 'Supercharge your job search with an AI resume analyzer, mock interview coach, and speaking practice. Start your free prep now.',
     canonical: `${BASE_URL}/`,
     ogImage: OG_IMAGE,
     schemas: [
@@ -79,9 +79,9 @@ export const SEO_DATA = {
         "name": "Talvorax",
         "applicationCategory": "BusinessApplication",
         "operatingSystem": "Web",
-        "description": "Supercharge your job search with AI resume analyzer, mock interview coach, and speaking practice. Try Talvorax free.",
+        "description": "Supercharge your job search with an AI resume analyzer, mock interview coach, and speaking practice. Start your free prep now.",
         "url": BASE_URL,
-        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "153" }
+        "offers": { "@type": "AggregateOffer", "priceCurrency": "INR", "lowPrice": "0", "highPrice": "999", "offerCount": "4", "availability": "https://schema.org/InStock" }
       },
       ORG_SCHEMA,
       {
@@ -163,7 +163,7 @@ ${FOOTER}`
 
   '/resume-analyzer': {
     title: 'AI Resume Analyzer: Pass the ATS & Get Hired | Talvorax',
-    description: 'Use our AI resume analyzer to beat ATS, optimize keywords, and get more interviews instantly.',
+    description: 'Beat the ATS with our AI resume analyzer — optimize keywords and land more interviews. Scan your resume free now.',
     canonical: `${BASE_URL}/resume-analyzer`,
     ogImage: OG_IMAGE,
     schemas: [
@@ -173,8 +173,9 @@ ${FOOTER}`
         "name": "Talvorax AI Resume Analyzer",
         "applicationCategory": "BusinessApplication",
         "operatingSystem": "Web",
-        "description": "Use our AI resume analyzer to beat ATS, optimize keywords, and get more interviews instantly.",
-        "url": `${BASE_URL}/resume-analyzer`
+        "description": "Beat the ATS with our AI resume analyzer — optimize keywords and land more interviews. Scan your resume free now.",
+        "url": `${BASE_URL}/resume-analyzer`,
+        "offers": { "@type": "AggregateOffer", "priceCurrency": "INR", "lowPrice": "0", "highPrice": "999", "offerCount": "4", "availability": "https://schema.org/InStock" }
       },
       ORG_SCHEMA,
       {
@@ -241,7 +242,7 @@ ${FOOTER}`
 
   '/interview-coach': {
     title: 'AI Mock Interview Online: Practice & Prepare | Talvorax',
-    description: 'Practice interviews with AI and get real-time feedback. Improve answers, tone, and confidence.',
+    description: 'Practice with AI mock interviews and get real-time feedback on your answers, tone, and confidence. Start your mock interview free.',
     canonical: `${BASE_URL}/interview-coach`,
     ogImage: OG_IMAGE,
     schemas: [
@@ -251,8 +252,9 @@ ${FOOTER}`
         "name": "Talvorax AI Interview Coach",
         "applicationCategory": "BusinessApplication",
         "operatingSystem": "Web",
-        "description": "Practice interviews with AI and get real-time feedback. Improve answers, tone, and confidence.",
-        "url": `${BASE_URL}/interview-coach`
+        "description": "Practice with AI mock interviews and get real-time feedback on your answers, tone, and confidence. Start your mock interview free.",
+        "url": `${BASE_URL}/interview-coach`,
+        "offers": { "@type": "AggregateOffer", "priceCurrency": "INR", "lowPrice": "0", "highPrice": "999", "offerCount": "4", "availability": "https://schema.org/InStock" }
       },
       ORG_SCHEMA,
       {
@@ -319,7 +321,7 @@ ${FOOTER}`
 
   '/minute-talk': {
     title: 'AI Speaking Practice Tool: Improve Communication | Talvorax',
-    description: 'Improve communication skills with AI. Eliminate filler words and speak confidently.',
+    description: 'Improve your communication skills with AI — cut filler words and speak with confidence. Try Minute Talk free today.',
     canonical: `${BASE_URL}/minute-talk`,
     ogImage: OG_IMAGE,
     schemas: [
@@ -329,8 +331,9 @@ ${FOOTER}`
         "name": "Talvorax Minute Talk",
         "applicationCategory": "BusinessApplication",
         "operatingSystem": "Web",
-        "description": "Improve communication skills with AI. Eliminate filler words and speak confidently.",
-        "url": `${BASE_URL}/minute-talk`
+        "description": "Improve your communication skills with AI — cut filler words and speak with confidence. Try Minute Talk free today.",
+        "url": `${BASE_URL}/minute-talk`,
+        "offers": { "@type": "AggregateOffer", "priceCurrency": "INR", "lowPrice": "0", "highPrice": "999", "offerCount": "4", "availability": "https://schema.org/InStock" }
       },
       ORG_SCHEMA,
       {
@@ -397,7 +400,7 @@ ${FOOTER}`
 
   '/job-alerts': {
     title: 'Smart AI Job Alerts | Talvorax',
-    description: 'Get notified instantly when jobs matching your exact skills and resume profile are posted. AI-powered job matching for serious job seekers.',
+    description: 'Get instant AI job alerts matched to your resume and skills. Never miss the right role again. Set up your free alerts now.',
     canonical: `${BASE_URL}/job-alerts`,
     ogImage: OG_IMAGE,
     schemas: [
@@ -414,8 +417,9 @@ ${FOOTER}`
         "name": "Talvorax Job Alerts",
         "applicationCategory": "BusinessApplication",
         "operatingSystem": "Web",
-        "description": "AI-powered job matching and instant alerts for job seekers.",
-        "url": `${BASE_URL}/job-alerts`
+        "description": "Get instant AI job alerts matched to your resume and skills. Never miss the right role again. Set up your free alerts now.",
+        "url": `${BASE_URL}/job-alerts`,
+        "offers": { "@type": "AggregateOffer", "priceCurrency": "INR", "lowPrice": "0", "highPrice": "999", "offerCount": "4", "availability": "https://schema.org/InStock" }
       },
       ORG_SCHEMA,
       breadcrumb([{ name: 'Home', path: '/' }, { name: 'Job Alerts', path: '/job-alerts' }])
@@ -457,7 +461,7 @@ ${FOOTER}`
 
   '/pricing': {
     title: 'Talvorax Pricing: Simple Plans for Job Seekers',
-    description: 'Choose a free or pro plan to supercharge your job search with our AI resume analyzer and interview coach.',
+    description: 'Compare free and Pro plans for AI resume analysis, mock interviews, and speaking practice. Start free — upgrade when you\'re ready.',
     canonical: `${BASE_URL}/pricing`,
     ogImage: OG_IMAGE,
     schemas: [
@@ -477,6 +481,27 @@ ${FOOTER}`
           { "@type": "Offer", "position": 2, "name": "Pro Monthly", "description": "Coming soon: Unlimited Resume Analysis & Tracking, Advanced AI Interview Coach (All Roles), Priority Support & Feedback.", "price": "299", "priceCurrency": "INR", "availability": "https://schema.org/PreOrder", "url": `${BASE_URL}/pricing` },
           { "@type": "Offer", "position": 3, "name": "Placement Season Pass", "description": "Coming soon: Everything in Pro for 4 months — the full placement season. Unlimited Resume Analysis, Advanced AI Interview Coach, Priority Support.", "price": "599", "priceCurrency": "INR", "availability": "https://schema.org/PreOrder", "url": `${BASE_URL}/pricing` },
           { "@type": "Offer", "position": 4, "name": "Pro Annual", "description": "Coming soon: A full year of Pro at the best rate. Unlimited Resume Analysis, Advanced AI Interview Coach, Priority Support.", "price": "999", "priceCurrency": "INR", "availability": "https://schema.org/PreOrder", "url": `${BASE_URL}/pricing` }
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Can I really use the AI for free?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes! Our Free Plan gives you access to basic resume analysis, limited interview coaching, and our standard job alerts. It's the perfect way to try out Talvorax and see how AI can accelerate your job search without any commitment." }
+          },
+          {
+            "@type": "Question",
+            "name": "When do paid plans launch?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Pro plans are launching soon. When they go live, upgrading will unlock unlimited resume analysis, advanced role-specific interview coaching, and priority support. Until then, every account gets the Free plan with 3 resume analyses per month." }
+          },
+          {
+            "@type": "Question",
+            "name": "How does the interview coach work on the Pro plan?",
+            "acceptedAnswer": { "@type": "Answer", "text": "The Pro interview coach allows you to select highly specialized roles and simulates intense, realistic technical and behavioral rounds that push you to your limits, preparing you for the toughest hiring managers." }
+          }
         ]
       },
       ORG_SCHEMA,

@@ -13,11 +13,14 @@ export const HomeLanding: React.FC = () => {
     "name": "Talvorax",
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "Web",
-    "description": "Supercharge your job search with AI resume analyzer, mock interview coach, and speaking practice. Try Talvorax free.",
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "ratingCount": "153"
+    "description": "Supercharge your job search with an AI resume analyzer, mock interview coach, and speaking practice. Start your free prep now.",
+    "offers": {
+      "@type": "AggregateOffer",
+      "priceCurrency": "INR",
+      "lowPrice": "0",
+      "highPrice": "999",
+      "offerCount": "4",
+      "availability": "https://schema.org/InStock"
     }
   };
 
@@ -124,7 +127,7 @@ export const HomeLanding: React.FC = () => {
     <div className="min-h-screen bg-slate-50 font-sans text-slate-900 selection:bg-emerald-500/20">
       <SEO 
         title="AI Career Tools to Land Your Dream Job | Talvorax"
-        description="Supercharge your job search with AI resume analyzer, mock interview coach, and speaking practice. Try Talvorax free."
+        description="Supercharge your job search with an AI resume analyzer, mock interview coach, and speaking practice. Start your free prep now."
         url={`${SITE_URL}/`}
         schema={mainSchema}
         faqSchema={faqSchema}

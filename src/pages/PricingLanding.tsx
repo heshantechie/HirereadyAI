@@ -93,6 +93,33 @@ export const PricingLanding: React.FC = () => {
   const freePlan = getFreePlan(region);
   const paidPlans = getPaidPlans(region);
 
+  // FAQ content — rendered visibly below AND used to build the FAQPage schema,
+  // so the structured data always matches what users actually see on the page.
+  const faqs = [
+    {
+      q: "Can I really use the AI for free?",
+      a: "Yes! Our Free Plan gives you access to basic resume analysis, limited interview coaching, and our standard job alerts. It's the perfect way to try out Talvorax and see how AI can accelerate your job search without any commitment.",
+    },
+    {
+      q: "When do paid plans launch?",
+      a: "Pro plans are launching soon. When they go live, upgrading will unlock unlimited resume analysis, advanced role-specific interview coaching, and priority support. Until then, every account gets the Free plan with 3 resume analyses per month.",
+    },
+    {
+      q: "How does the interview coach work on the Pro plan?",
+      a: "The Pro interview coach allows you to select highly specialized roles and simulates intense, realistic technical and behavioral rounds that push you to your limits, preparing you for the toughest hiring managers.",
+    },
+  ];
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map((f) => ({
+      "@type": "Question",
+      "name": f.q,
+      "acceptedAnswer": { "@type": "Answer", "text": f.a },
+    })),
+  };
+
   const handleUpgradeClick = (plan: Plan) => {
     track('upgrade_cta_clicked', { plan_id: plan.id, region, coming_soon: plan.comingSoon ?? false }, user?.id);
   };
@@ -101,8 +128,9 @@ export const PricingLanding: React.FC = () => {
     <div className="min-h-screen font-sans bg-white pt-24 text-slate-900">
       <SEO 
         title="Simple, Transparent Pricing | Talvorax"
-        description="Choose the right plan to supercharge your job search with AI resume analysis, mock interviews, and auto-apply."
+        description="Compare free and Pro plans for AI resume analysis, mock interviews, and speaking practice. Start free — upgrade when you're ready."
         url={`${SITE_URL}/pricing`}
+        faqSchema={faqSchema}
       />
       <Navbar />
 
@@ -163,6 +191,20 @@ export const PricingLanding: React.FC = () => {
           <PaidPlanCard key={plan.id} plan={plan} onUpgradeClick={handleUpgradeClick} />
         ))}
       </section>
+
+      {/* FAQ — visible content must match the FAQPage schema above */}
+      <section className="max-w-3xl mx-auto px-6 pb-24">
+        <h2 className="text-3xl md:text-4xl font-[800] tracking-tight text-center mb-10">Frequently Asked Questions</h2>
+        <dl className="space-y-4">
+          {faqs.map((f) => (
+            <div key={f.q} className="bg-slate-50 rounded-2xl p-6 border border-gray-100">
+              <dt className="font-bold text-lg text-slate-900 mb-2">{f.q}</dt>
+              <dd className="text-slate-600 font-medium leading-relaxed">{f.a}</dd>
+            </div>
+          ))}
+        </dl>
+      </section>
+
       <Footer />
     </div>
   );

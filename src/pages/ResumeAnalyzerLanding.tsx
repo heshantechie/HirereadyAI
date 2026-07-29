@@ -12,7 +12,15 @@ export const ResumeAnalyzerLanding: React.FC = () => {
     "name": "Talvorax AI Resume Analyzer",
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "Web",
-    "description": "Use our AI resume analyzer to beat ATS, optimize keywords, and get more interviews instantly."
+    "description": "Beat the ATS with our AI resume analyzer — optimize keywords and land more interviews. Scan your resume free now.",
+    "offers": {
+      "@type": "AggregateOffer",
+      "priceCurrency": "INR",
+      "lowPrice": "0",
+      "highPrice": "999",
+      "offerCount": "4",
+      "availability": "https://schema.org/InStock"
+    }
   };
 
   const faqSchema = {
@@ -77,7 +85,7 @@ export const ResumeAnalyzerLanding: React.FC = () => {
     <div className="min-h-screen bg-white font-sans">
       <SEO 
         title="AI Resume Analyzer: Pass the ATS & Get Hired | Talvorax"
-        description="Use our AI resume analyzer to beat ATS, optimize keywords, and get more interviews instantly."
+        description="Beat the ATS with our AI resume analyzer — optimize keywords and land more interviews. Scan your resume free now."
         url={`${SITE_URL}/resume-analyzer`}
         schema={schema}
         faqSchema={faqSchema}
