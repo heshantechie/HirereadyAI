@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { SEO } from '../components/SEO';
 import { Navbar } from '../components/Navbar';
 import { Footer } from '../components/Footer';
+import { SITE_URL } from '../constants/site';
 
 export const HomeLanding: React.FC = () => {
   const mainSchema = {
@@ -124,7 +125,7 @@ export const HomeLanding: React.FC = () => {
       <SEO 
         title="AI Career Tools to Land Your Dream Job | Talvorax"
         description="Supercharge your job search with AI resume analyzer, mock interview coach, and speaking practice. Try Talvorax free."
-        url="https://talvorax.com/"
+        url={`${SITE_URL}/`}
         schema={mainSchema}
         faqSchema={faqSchema}
       />

@@ -3,8 +3,9 @@ import { Drama, Bot, Target, Mic } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/SEO';
 import { Navbar } from '../components/Navbar';
-
 import { Footer } from '../components/Footer';
+import { SITE_URL } from '../constants/site';
+
 export const InterviewCoachLanding: React.FC = () => {
   const schema = {
     "@context": "https://schema.org",
@@ -78,7 +79,7 @@ export const InterviewCoachLanding: React.FC = () => {
       <SEO 
         title="AI Mock Interview Online: Practice & Prepare | Talvorax"
         description="Practice interviews with AI and get real-time feedback. Improve answers, tone, and confidence."
-        url="https://talvorax.com/interview-coach"
+        url={`${SITE_URL}/interview-coach`}
         schema={schema}
         faqSchema={faqSchema}
       />

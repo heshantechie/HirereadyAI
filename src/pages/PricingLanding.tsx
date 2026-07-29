@@ -7,6 +7,8 @@ import { Footer } from '../components/Footer';
 import { detectRegion, getFreePlan, getPaidPlans, Plan, Region } from '../lib/pricing';
 import { track } from '../lib/analytics';
 import { useAuth } from '../contexts/AuthContext';
+import { SEO } from '../components/SEO';
+import { SITE_URL } from '../constants/site';
 
 const PaidPlanCard: React.FC<{ plan: Plan; onUpgradeClick: (plan: Plan) => void }> = ({ plan, onUpgradeClick }) => {
   const [notified, setNotified] = useState(false);
@@ -97,6 +99,11 @@ export const PricingLanding: React.FC = () => {
 
   return (
     <div className="min-h-screen font-sans bg-white pt-24 text-slate-900">
+      <SEO 
+        title="Simple, Transparent Pricing | Talvorax"
+        description="Choose the right plan to supercharge your job search with AI resume analysis, mock interviews, and auto-apply."
+        url={`${SITE_URL}/pricing`}
+      />
       <Navbar />
 
       {/* Header */}

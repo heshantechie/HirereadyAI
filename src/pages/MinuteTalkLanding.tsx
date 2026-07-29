@@ -3,8 +3,9 @@ import { Mic, BarChart3, Rocket } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/SEO';
 import { Navbar } from '../components/Navbar';
-
 import { Footer } from '../components/Footer';
+import { SITE_URL } from '../constants/site';
+
 export const MinuteTalkLanding: React.FC = () => {
   const schema = {
     "@context": "https://schema.org",
@@ -81,7 +82,7 @@ export const MinuteTalkLanding: React.FC = () => {
       <SEO 
         title="AI Speaking Practice Tool: Improve Communication | Talvorax"
         description="Improve communication skills with AI. Eliminate filler words and speak confidently."
-        url="https://talvorax.com/minute-talk"
+        url={`${SITE_URL}/minute-talk`}
         schema={schema}
         faqSchema={faqSchema}
       />

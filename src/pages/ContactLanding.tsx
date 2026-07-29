@@ -1,11 +1,18 @@
 import React from 'react';
 import { Navbar } from '../components/Navbar';
 import { Mail, MessageSquare, MapPin } from 'lucide-react';
-
 import { Footer } from '../components/Footer';
+import { SEO } from '../components/SEO';
+import { SITE_URL } from '../constants/site';
+
 export const ContactLanding: React.FC = () => {
   return (
     <div className="min-h-screen font-sans bg-white pt-24 text-slate-900">
+      <SEO 
+        title="Contact Us | Talvorax"
+        description="Get in touch with the Talvorax team for support, questions, or product feedback."
+        url={`${SITE_URL}/contact`}
+      />
       <Navbar />
       
       <section className="max-w-6xl mx-auto px-6 py-12 grid grid-cols-1 lg:grid-cols-2 gap-12">

@@ -1,11 +1,18 @@
 import React from 'react';
 import { Navbar } from '../components/Navbar';
 import { Target, Lightbulb, Users } from 'lucide-react';
-
 import { Footer } from '../components/Footer';
+import { SEO } from '../components/SEO';
+import { SITE_URL } from '../constants/site';
+
 export const AboutLanding: React.FC = () => {
   return (
     <div className="min-h-screen font-sans bg-white pt-24 text-slate-900">
+      <SEO 
+        title="About Us | Talvorax"
+        description="Learn about Talvorax and our mission to democratize career growth with cutting-edge AI tools."
+        url={`${SITE_URL}/about`}
+      />
       <Navbar />
       
       {/* Header */}

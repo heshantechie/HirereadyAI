@@ -12,6 +12,7 @@ import { SEO } from '../components/SEO';
 import { AILoader } from '../components/AILoader';
 import { checkJobAlertLimit, LimitStatus } from '../lib/freeLimits';
 import { PaywallModal } from '../components/PaywallModal';
+import { SITE_URL } from '../constants/site';
 
 const API_URL = import.meta.env.PROD 
   ? (import.meta.env.VITE_API_URL && !import.meta.env.VITE_API_URL.includes('localhost') ? import.meta.env.VITE_API_URL : '')
@@ -615,7 +616,7 @@ export const JobAlertsLanding: React.FC = () => {
         <SEO 
           title="Job Alerts & AI Matcher | Talvorax"
           description="Sign up for AI job alerts to get customized role recommendations matched to your resume automatically."
-          url="https://www.talvorax.com/job-alerts"
+          url={`${SITE_URL}/job-alerts`}
         />
         <Navbar />
         <div className="relative z-10 flex flex-col items-center justify-center min-h-screen gap-6 px-4 text-center">
@@ -638,7 +639,7 @@ export const JobAlertsLanding: React.FC = () => {
       <SEO 
         title="Job Alerts & AI Matcher | Talvorax"
         description="Manage your job alerts and view customized AI role recommendations matched to your resume automatically."
-        url="https://www.talvorax.com/job-alerts"
+        url={`${SITE_URL}/job-alerts`}
       />
       <Navbar />
 

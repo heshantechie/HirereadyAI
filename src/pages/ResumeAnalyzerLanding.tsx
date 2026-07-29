@@ -3,8 +3,8 @@ import { Target, PenLine, LayoutTemplate, FileText, Trophy } from 'lucide-react'
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/SEO';
 import { Navbar } from '../components/Navbar';
-
 import { Footer } from '../components/Footer';
+import { SITE_URL } from '../constants/site';
 export const ResumeAnalyzerLanding: React.FC = () => {
   const schema = {
     "@context": "https://schema.org",
@@ -78,7 +78,7 @@ export const ResumeAnalyzerLanding: React.FC = () => {
       <SEO 
         title="AI Resume Analyzer: Pass the ATS & Get Hired | Talvorax"
         description="Use our AI resume analyzer to beat ATS, optimize keywords, and get more interviews instantly."
-        url="https://talvorax.com/resume-analyzer"
+        url={`${SITE_URL}/resume-analyzer`}
         schema={schema}
         faqSchema={faqSchema}
       />

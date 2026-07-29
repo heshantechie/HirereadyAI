@@ -8,6 +8,7 @@ import {
 } from 'lucide-react';
 import { SEO } from '../components/SEO';
 import { AILoader } from '../components/AILoader';
+import { SITE_URL } from '../constants/site';
 
 const API_URL = import.meta.env.PROD 
   ? (import.meta.env.VITE_API_URL && !import.meta.env.VITE_API_URL.includes('localhost') ? import.meta.env.VITE_API_URL : '')
@@ -251,7 +252,7 @@ export const AutoApplyLanding: React.FC = () => {
         <SEO 
           title="AI Auto Apply & Co-pilot | Talvorax"
           description="Automatically apply to jobs that match your resume. Set up your AI auto-apply preferences with Talvorax."
-          url="https://www.talvorax.com/auto-apply"
+          url={`${SITE_URL}/auto-apply`}
         />
         <Navbar />
         <div className="relative z-10 flex flex-col items-center justify-center min-h-[70vh] gap-6 px-4 text-center">
@@ -313,7 +314,7 @@ export const AutoApplyLanding: React.FC = () => {
       <SEO 
         title="AI Auto Apply & Co-pilot | Talvorax"
         description="Automatically apply to jobs that match your resume. Track your applications and settings."
-        url="https://www.talvorax.com/auto-apply"
+        url={`${SITE_URL}/auto-apply`}
       />
       <Navbar />
 

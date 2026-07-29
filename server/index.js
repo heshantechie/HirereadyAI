@@ -173,6 +173,7 @@ const buildAllowedOrigins = () => {
     origins.push(
       "https://talvorax.up.railway.app",
       "https://hire-ready-ai.vercel.app",
+      "https://release.1.0.talvorax.com",
       "https://release1.0.talvorax.com",
       "https://www.talvorax.com",
       "https://talvorax.com"

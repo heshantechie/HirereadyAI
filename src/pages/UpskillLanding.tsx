@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 
 import { Footer } from '../components/Footer';
+import { SEO } from '../components/SEO';
+import { SITE_URL } from '../constants/site';
 
 export const UpskillLanding: React.FC = () => {
   const { session } = useAuth();
@@ -23,6 +25,11 @@ export const UpskillLanding: React.FC = () => {
 
   return (
     <div className="min-h-screen font-sans bg-white pt-24 text-slate-900">
+      <SEO 
+        title="AI Career Upskill Platform | Talvorax"
+        description="Master your job search with our full suite of AI career upskilling tools."
+        url={`${SITE_URL}/upskill`}
+      />
       <Navbar />
       
       {/* Header */}

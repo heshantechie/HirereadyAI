@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { SITE_URL, SITE_NAME, DEFAULT_OG_IMAGE } from '../constants/site';
 
 interface SEOProps {
   title: string;
@@ -9,12 +10,10 @@ interface SEOProps {
   faqSchema?: any;
 }
 
-const DEFAULT_OG_IMAGE = 'https://www.talvorax.com/og-image.png';
-
 export const SEO: React.FC<SEOProps> = ({
   title,
   description,
-  url = 'https://www.talvorax.com',
+  url = SITE_URL,
   ogImage = DEFAULT_OG_IMAGE,
   schema,
   faqSchema,
@@ -39,7 +38,7 @@ export const SEO: React.FC<SEOProps> = ({
 
     // Open Graph
     setMeta('og:type', 'website', true);
-    setMeta('og:site_name', 'Talvorax', true);
+    setMeta('og:site_name', SITE_NAME, true);
     setMeta('og:title', title, true);
     setMeta('og:description', description, true);
     setMeta('og:url', url, true);
@@ -52,6 +51,7 @@ export const SEO: React.FC<SEOProps> = ({
     setMeta('twitter:title', title);
     setMeta('twitter:description', description);
     setMeta('twitter:image', ogImage);
+    setMeta('twitter:url', url);
 
     // Canonical
     let canonicalEl = document.querySelector('link[rel="canonical"]');
