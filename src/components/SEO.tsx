@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { SITE_URL, SITE_NAME, DEFAULT_OG_IMAGE } from '../constants/site';
+import { ORGANIZATION_SCHEMA } from '../lib/schema';
 
 interface SEOProps {
   title: string;
@@ -78,6 +79,18 @@ export const SEO: React.FC<SEOProps> = ({
       document.head.appendChild(canonicalEl);
     }
     canonicalEl.setAttribute('href', url);
+
+    // Organization schema — site-wide, one per page. Reuses the prerendered
+    // #schema-org node when present (crawler layer uses the same id) so there
+    // is never a duplicate Organization node after hydration.
+    let orgScriptEl = document.querySelector('script#schema-org');
+    if (!orgScriptEl) {
+      orgScriptEl = document.createElement('script');
+      orgScriptEl.setAttribute('type', 'application/ld+json');
+      orgScriptEl.id = 'schema-org';
+      document.head.appendChild(orgScriptEl);
+    }
+    orgScriptEl.textContent = JSON.stringify(ORGANIZATION_SCHEMA);
 
     // Main App Schema (JSON-LD)
     let mainScriptEl = document.querySelector('script#schema-main');

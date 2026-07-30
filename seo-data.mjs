@@ -7,6 +7,7 @@
 
 const BASE_URL = 'https://www.talvorax.com';
 const OG_IMAGE = `${BASE_URL}/og-image.png`;
+const LOGO = `${BASE_URL}/logo.png`;
 
 const NAV = `
 <nav aria-label="Main navigation">
@@ -47,9 +48,8 @@ const ORG_SCHEMA = {
   "@type": "Organization",
   "name": "Talvorax",
   "url": BASE_URL,
-  "logo": OG_IMAGE,
-  "description": "AI career tools to help job seekers beat ATS, ace interviews, and land their dream jobs faster.",
-  "sameAs": []
+  "logo": LOGO,
+  "description": "AI-powered career platform helping job seekers beat ATS, ace interviews, and land their dream jobs faster."
 };
 
 function breadcrumb(items) {
@@ -96,7 +96,7 @@ export const SEO_DATA = {
           {
             "@type": "Question",
             "name": "Is Talvorax free to use?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Yes, Talvorax offers a free tier to try out our AI Resume Analyzer, Interview Coach, and Minute Talk tools to immediately improve your job search." }
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes! You can try out our core AI tools for free to instantly improve your job search strategy." }
           }
         ]
       },
@@ -154,7 +154,7 @@ export const SEO_DATA = {
       <dt>What are AI career tools?</dt>
       <dd>AI career tools are software applications that use artificial intelligence to help candidates prepare for job applications. They include features like AI resume analyzers to beat Applicant Tracking Systems (ATS) and AI mock interview platforms to practice speaking and behavioral questions.</dd>
       <dt>Is Talvorax free to use?</dt>
-      <dd>Yes! You can try out our core AI tools for free to instantly improve your job search strategy. Our free tier includes basic resume analysis, limited interview coaching, and standard job alerts to get you started on the right foot.</dd>
+      <dd>Yes! You can try out our core AI tools for free to instantly improve your job search strategy.</dd>
     </dl>
   </section>
 </main>
@@ -587,7 +587,7 @@ ${FOOTER}`
         "@type": "Organization",
         "name": "Talvorax",
         "url": BASE_URL,
-        "logo": OG_IMAGE,
+        "logo": LOGO,
         "description": "We are on a mission to democratize career growth. Talvorax leverages cutting-edge AI to provide personalized tools that help candidates stand out, upskill efficiently, and land their dream jobs.",
         "knowsAbout": ["AI Resume Analysis", "Mock Interview Coaching", "Job Search Automation", "Communication Skills Training"]
       },
@@ -800,10 +800,13 @@ ${FOOTER}`
     schemas: [
       {
         "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Upskill Platform &#8212; Talvorax",
-        "description": "Access our entire suite of AI career upskilling tools, including resume analysis, interview prep, and auto-apply engines.",
-        "url": `${BASE_URL}/upskill`
+        "@type": "SoftwareApplication",
+        "name": "Talvorax Upskill Platform",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "description": "Access the full Talvorax suite of AI career tools — resume analysis, interview practice, speaking drills, and auto apply — in one upskilling hub.",
+        "url": `${BASE_URL}/upskill`,
+        "offers": { "@type": "AggregateOffer", "priceCurrency": "INR", "lowPrice": "0", "highPrice": "999", "offerCount": "4", "availability": "https://schema.org/InStock" }
       },
       {
         "@context": "https://schema.org",

@@ -5,43 +5,13 @@ import { SEO } from '../components/SEO';
 import { Navbar } from '../components/Navbar';
 import { Footer } from '../components/Footer';
 import { SITE_URL } from '../constants/site';
+import { softwareApplicationSchema, faqPageSchema } from '../lib/schema';
 export const ResumeAnalyzerLanding: React.FC = () => {
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Talvorax AI Resume Analyzer",
-    "applicationCategory": "BusinessApplication",
-    "operatingSystem": "Web",
-    "description": "Get an instant ATS resume score with AI-powered feedback. Free 3 scans/month — check your resume now.",
-    "offers": {
-      "@type": "AggregateOffer",
-      "priceCurrency": "INR",
-      "lowPrice": "0",
-      "highPrice": "999",
-      "offerCount": "4",
-      "availability": "https://schema.org/InStock"
-    }
-  };
-
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [{
-      "@type": "Question",
-      "name": "What is an ATS resume checker?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "An ATS resume checker simulates how Applicant Tracking Systems read your resume. It identifies missing keywords, formatting errors, and ensures your application easily passes through to a human recruiter."
-      }
-    }, {
-      "@type": "Question",
-      "name": "How does the AI resume analyzer work?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "You simply upload your resume and paste your target job description. The AI analyzes both, gives you an ATS match score, and suggests bullet-point rewrites to highlight your impact."
-      }
-    }]
-  };
+  const schema = softwareApplicationSchema({
+    name: 'Talvorax AI Resume Analyzer',
+    description: 'Get an instant ATS resume score with AI-powered feedback. Free 3 scans/month — check your resume now.',
+    path: '/resume-analyzer',
+  });
 
   const features = [
     {
@@ -80,6 +50,8 @@ export const ResumeAnalyzerLanding: React.FC = () => {
       a: "You simply upload your resume and paste your target job description. The AI analyzes both, gives you an ATS match score, and suggests bullet-point rewrites to highlight your impact."
     }
   ];
+
+  const faqSchema = faqPageSchema(faqs);
 
   return (
     <div className="min-h-screen bg-white font-sans">

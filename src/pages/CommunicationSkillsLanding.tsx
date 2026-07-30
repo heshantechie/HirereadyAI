@@ -5,14 +5,22 @@ import { Link } from 'react-router-dom';
 import { Footer } from '../components/Footer';
 import { SEO } from '../components/SEO';
 import { SITE_URL } from '../constants/site';
+import { softwareApplicationSchema } from '../lib/schema';
 
 export const CommunicationSkillsLanding: React.FC = () => {
+  const schema = softwareApplicationSchema({
+    name: 'Talvorax Communication Skills',
+    description: 'AI-powered communication skills training with real-time feedback on tone, pacing, clarity, and filler words.',
+    path: '/communication-skills',
+  });
+
   return (
     <div className="min-h-screen font-sans bg-white pt-24 text-slate-900">
       <SEO 
         title="AI Communication Skills Practice | Talvorax"
         description="Master your verbal delivery. Get real-time feedback on tone, pacing, filler words, and clarity."
         url={`${SITE_URL}/communication-skills`}
+        schema={schema}
       />
       <Navbar />
       <section className="py-20 px-6 max-w-4xl mx-auto text-center">

@@ -5,44 +5,14 @@ import { SEO } from '../components/SEO';
 import { Navbar } from '../components/Navbar';
 import { Footer } from '../components/Footer';
 import { SITE_URL } from '../constants/site';
+import { softwareApplicationSchema, faqPageSchema } from '../lib/schema';
 
 export const MinuteTalkLanding: React.FC = () => {
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Talvorax AI Minute Talk",
-    "applicationCategory": "BusinessApplication",
-    "operatingSystem": "Web",
-    "description": "Improve your speaking clarity and confidence with AI-powered practice sessions. Try Minute Talk free.",
-    "offers": {
-      "@type": "AggregateOffer",
-      "priceCurrency": "INR",
-      "lowPrice": "0",
-      "highPrice": "999",
-      "offerCount": "4",
-      "availability": "https://schema.org/InStock"
-    }
-  };
-
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [{
-      "@type": "Question",
-      "name": "What is AI speaking practice?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "AI speaking practice involves using artificial intelligence to analyze your voice in real-time. It detects filler words, measures speaking speed (words per minute), and evaluates clarity."
-      }
-    }, {
-      "@type": "Question",
-      "name": "How can an AI improve communication skills?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "By performing daily 60-second drills, AI helps you build awareness of your vocal habits. You get instant feedback on crutch words and pacing, allowing you to train yourself for better public speaking online and in-person."
-      }
-    }]
-  };
+  const schema = softwareApplicationSchema({
+    name: 'Talvorax AI Minute Talk',
+    description: 'Improve your speaking clarity and confidence with AI-powered practice sessions. Try Minute Talk free.',
+    path: '/minute-talk',
+  });
 
   const features = [
     {
@@ -84,6 +54,8 @@ export const MinuteTalkLanding: React.FC = () => {
       a: "By performing daily 60-second drills, AI helps you build awareness of your vocal habits. You get instant feedback on crutch words and pacing, allowing you to train yourself for better public speaking online and in-person."
     }
   ];
+
+  const faqSchema = faqPageSchema(faqs);
 
   return (
     <div className="min-h-screen bg-white font-sans">

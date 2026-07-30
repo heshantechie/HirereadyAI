@@ -5,44 +5,14 @@ import { SEO } from '../components/SEO';
 import { Navbar } from '../components/Navbar';
 import { Footer } from '../components/Footer';
 import { SITE_URL } from '../constants/site';
+import { softwareApplicationSchema, faqPageSchema } from '../lib/schema';
 
 export const InterviewCoachLanding: React.FC = () => {
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Talvorax AI Interview Coach",
-    "applicationCategory": "BusinessApplication",
-    "operatingSystem": "Web",
-    "description": "Practice real interview questions with AI feedback on your answers. Start your free mock interview today.",
-    "offers": {
-      "@type": "AggregateOffer",
-      "priceCurrency": "INR",
-      "lowPrice": "0",
-      "highPrice": "999",
-      "offerCount": "4",
-      "availability": "https://schema.org/InStock"
-    }
-  };
-
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [{
-      "@type": "Question",
-      "name": "What is an AI mock interview?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "An AI mock interview simulates a real job interview using artificial intelligence. It asks you role-specific questions and evaluates your spoken answers, tone, and pacing just like a human interviewer would."
-      }
-    }, {
-      "@type": "Question",
-      "name": "How does the interview coach AI analyze my answers?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The AI records your voice, transcribes it, and evaluates it using the STAR method (Situation, Task, Action, Result). It checks if your answers are concise, relevant, and impactful, providing instant feedback on areas to improve."
-      }
-    }]
-  };
+  const schema = softwareApplicationSchema({
+    name: 'Talvorax AI Interview Coach',
+    description: 'Practice real interview questions with AI feedback on your answers. Start your free mock interview today.',
+    path: '/interview-coach',
+  });
 
   const features = [
     {
@@ -81,6 +51,8 @@ export const InterviewCoachLanding: React.FC = () => {
       a: "The AI records your voice, transcribes it, and evaluates it using the STAR method (Situation, Task, Action, Result). It checks if your answers are concise, relevant, and impactful, providing instant feedback on areas to improve."
     }
   ];
+
+  const faqSchema = faqPageSchema(faqs);
 
   return (
     <div className="min-h-screen bg-white font-sans">

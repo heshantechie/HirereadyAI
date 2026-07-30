@@ -36,8 +36,21 @@ function buildSchemaTag(schema, id) {
 }
 
 function buildSchemaTags(schemas) {
+  // Stable ids shared with the runtime SEO component (src/components/SEO.tsx).
+  // The runtime reuses these exact nodes on hydration (querySelector by id and
+  // replaces textContent) instead of injecting duplicates. BreadcrumbList and
+  // any other types keep indexed ids since the runtime never manages them.
+  const STABLE_IDS = {
+    Organization: 'schema-org',
+    SoftwareApplication: 'schema-main',
+    FAQPage: 'schema-faq',
+  };
   return schemas
-    .map((schema, i) => buildSchemaTag(schema, `schema-static-${i}`))
+    .map((schema, i) => {
+      const type = Array.isArray(schema['@type']) ? schema['@type'][0] : schema['@type'];
+      const id = STABLE_IDS[type] || `schema-static-${i}`;
+      return buildSchemaTag(schema, id);
+    })
     .join('\n');
 }
 

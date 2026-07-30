@@ -9,8 +9,15 @@ import {
 import { SEO } from '../components/SEO';
 import { AILoader } from '../components/AILoader';
 import { SITE_URL } from '../constants/site';
+import { softwareApplicationSchema } from '../lib/schema';
 
-const API_URL = import.meta.env.PROD 
+const autoApplySchema = softwareApplicationSchema({
+  name: 'Talvorax Auto Apply',
+  description: 'Coming soon: automatically apply to jobs matched to your resume and track every application from one AI-powered dashboard.',
+  path: '/auto-apply',
+});
+
+const API_URL = import.meta.env.PROD
   ? (import.meta.env.VITE_API_URL && !import.meta.env.VITE_API_URL.includes('localhost') ? import.meta.env.VITE_API_URL : '')
   : (import.meta.env.VITE_API_URL || '');
 
@@ -253,6 +260,7 @@ export const AutoApplyLanding: React.FC = () => {
           title="AI Auto Apply & Co-pilot | Talvorax"
           description="Automatically apply to jobs that match your resume. Set up your AI auto-apply preferences with Talvorax."
           url={`${SITE_URL}/auto-apply`}
+          schema={autoApplySchema}
         />
         <Navbar />
         <div className="relative z-10 flex flex-col items-center justify-center min-h-[70vh] gap-6 px-4 text-center">
@@ -315,6 +323,7 @@ export const AutoApplyLanding: React.FC = () => {
         title="AI Auto Apply & Co-pilot | Talvorax"
         description="Automatically apply to jobs that match your resume. Track your applications and settings."
         url={`${SITE_URL}/auto-apply`}
+        schema={autoApplySchema}
       />
       <Navbar />
 

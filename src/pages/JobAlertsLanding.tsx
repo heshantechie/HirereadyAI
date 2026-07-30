@@ -13,6 +13,7 @@ import { AILoader } from '../components/AILoader';
 import { checkJobAlertLimit, LimitStatus } from '../lib/freeLimits';
 import { PaywallModal } from '../components/PaywallModal';
 import { SITE_URL } from '../constants/site';
+import { softwareApplicationSchema } from '../lib/schema';
 
 const API_URL = import.meta.env.PROD 
   ? (import.meta.env.VITE_API_URL && !import.meta.env.VITE_API_URL.includes('localhost') ? import.meta.env.VITE_API_URL : '')
@@ -396,22 +397,11 @@ const AlertItem: React.FC<{
 // ─── Main JobAlertsLanding Component ──────────────────────────────────────────
 
 export const JobAlertsLanding: React.FC = () => {
-  const jobAlertsSchema = {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Talvorax Job Alerts",
-    "applicationCategory": "BusinessApplication",
-    "operatingSystem": "Web",
-    "description": "Get instant AI job alerts matched to your resume and skills. Never miss the right role again. Set up your free alerts now.",
-    "offers": {
-      "@type": "AggregateOffer",
-      "priceCurrency": "INR",
-      "lowPrice": "0",
-      "highPrice": "999",
-      "offerCount": "4",
-      "availability": "https://schema.org/InStock"
-    }
-  };
+  const jobAlertsSchema = softwareApplicationSchema({
+    name: 'Talvorax Job Alerts',
+    description: 'Get instant AI job alerts matched to your resume and skills. Never miss the right role again. Set up your free alerts now.',
+    path: '/job-alerts',
+  });
 
   const { session } = useAuth();
   const [activeTab, setActiveTab] = useState<'alerts' | 'resume'>('alerts');

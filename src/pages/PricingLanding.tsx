@@ -9,6 +9,7 @@ import { track } from '../lib/analytics';
 import { useAuth } from '../contexts/AuthContext';
 import { SEO } from '../components/SEO';
 import { SITE_URL } from '../constants/site';
+import { faqPageSchema } from '../lib/schema';
 
 const PaidPlanCard: React.FC<{ plan: Plan; onUpgradeClick: (plan: Plan) => void }> = ({ plan, onUpgradeClick }) => {
   const [notified, setNotified] = useState(false);
@@ -110,15 +111,7 @@ export const PricingLanding: React.FC = () => {
     },
   ];
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqs.map((f) => ({
-      "@type": "Question",
-      "name": f.q,
-      "acceptedAnswer": { "@type": "Answer", "text": f.a },
-    })),
-  };
+  const faqSchema = faqPageSchema(faqs);
 
   const handleUpgradeClick = (plan: Plan) => {
     track('upgrade_cta_clicked', { plan_id: plan.id, region, coming_soon: plan.comingSoon ?? false }, user?.id);

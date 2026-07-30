@@ -5,44 +5,14 @@ import { SEO } from '../components/SEO';
 import { Navbar } from '../components/Navbar';
 import { Footer } from '../components/Footer';
 import { SITE_URL } from '../constants/site';
+import { softwareApplicationSchema, faqPageSchema } from '../lib/schema';
 
 export const HomeLanding: React.FC = () => {
-  const mainSchema = {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Talvorax",
-    "applicationCategory": "BusinessApplication",
-    "operatingSystem": "Web",
-    "description": "Supercharge your job search with an AI resume analyzer, mock interview coach, and speaking practice. Start your free prep now.",
-    "offers": {
-      "@type": "AggregateOffer",
-      "priceCurrency": "INR",
-      "lowPrice": "0",
-      "highPrice": "999",
-      "offerCount": "4",
-      "availability": "https://schema.org/InStock"
-    }
-  };
-
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [{
-      "@type": "Question",
-      "name": "What are AI career tools?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "AI career tools are software applications that use artificial intelligence to help candidates prepare for job applications. They include features like AI resume analyzers to beat Applicant Tracking Systems (ATS) and AI mock interview platforms to practice speaking and behavioral questions."
-      }
-    }, {
-      "@type": "Question",
-      "name": "Is Talvorax free to use?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, Talvorax offers a free tier to try out our AI Resume Analyzer, Interview Coach, and Minute Talk tools to immediately improve your job search."
-      }
-    }]
-  };
+  const mainSchema = softwareApplicationSchema({
+    name: 'Talvorax',
+    description: 'Supercharge your job search with an AI resume analyzer, mock interview coach, and speaking practice. Start your free prep now.',
+    path: '/',
+  });
 
   const tools = [
     {
@@ -122,6 +92,8 @@ export const HomeLanding: React.FC = () => {
       a: "Yes! You can try out our core AI tools for free to instantly improve your job search strategy."
     }
   ];
+
+  const faqSchema = faqPageSchema(faqs);
 
   return (
     <div className="min-h-screen bg-slate-50 font-sans text-slate-900 selection:bg-emerald-500/20">

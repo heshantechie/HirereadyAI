@@ -7,9 +7,16 @@ import { useAuth } from '../contexts/AuthContext';
 import { Footer } from '../components/Footer';
 import { SEO } from '../components/SEO';
 import { SITE_URL } from '../constants/site';
+import { softwareApplicationSchema } from '../lib/schema';
 
 export const UpskillLanding: React.FC = () => {
   const { session } = useAuth();
+
+  const schema = softwareApplicationSchema({
+    name: 'Talvorax Upskill Platform',
+    description: 'Access the full Talvorax suite of AI career tools — resume analysis, interview practice, speaking drills, and auto apply — in one upskilling hub.',
+    path: '/upskill',
+  });
 
   const getPath = (basePath: string) => {
     return `/dashboard${basePath}`;
@@ -29,6 +36,7 @@ export const UpskillLanding: React.FC = () => {
         title="AI Career Upskill Platform | Talvorax"
         description="Master your job search with our full suite of AI career upskilling tools."
         url={`${SITE_URL}/upskill`}
+        schema={schema}
       />
       <Navbar />
       
