@@ -33,7 +33,7 @@
   "rewrites": [
     {
       "source": "/api/(.*)",
-      "destination": "https://release.1.0.talvorax.com/api/$1"
+      "destination": "https://talvorax.up.railway.app/api/$1"
     },
     {
       "source": "/(.*)",
