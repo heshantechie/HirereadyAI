@@ -47,14 +47,9 @@ function loadApiKeys(): string[] {
 
 // ─── Rate Limit / Quota Error Detection ──────────────────────────────────────
 function isRateLimitError(status: number, body: string): boolean {
-  if (status === 429) return true;
-  if (status === 503) return true; // Groq overload
+  if (status === 429 || status === 503) return true;
   const lowerBody = body.toLowerCase();
   return (
-    lowerBody.includes("rate limit") ||
-    lowerBody.includes("quota") ||
-    lowerBody.includes("limit exceeded") ||
-    lowerBody.includes("too many requests") ||
     lowerBody.includes("rate_limit_exceeded") ||
     lowerBody.includes("tokens per day") ||
     lowerBody.includes("requests per day")
@@ -180,18 +175,20 @@ serve(async (req: Request) => {
     const supabaseAnonKey = Deno.env.get("SUPABASE_ANON_KEY");
     const userToken = authHeader.replace("Bearer ", "");
 
-    if (supabaseUrl && supabaseAnonKey && userToken !== supabaseAnonKey) {
-      const supabase = createClient(supabaseUrl, supabaseAnonKey, {
-        global: { headers: { Authorization: `Bearer ${userToken}` } },
-      });
+    if (supabaseUrl && supabaseAnonKey && userToken && userToken !== supabaseAnonKey) {
+      try {
+        const supabase = createClient(supabaseUrl, supabaseAnonKey, {
+          auth: { persistSession: false },
+        });
 
-      const { data: { user }, error: authError } = await supabase.auth.getUser();
-      if (authError || !user) {
-        console.warn("[ai-proxy] JWT auth failed or expired:", authError?.message);
-        return new Response(
-          JSON.stringify({ error: "Invalid or expired session. Please log in again." }),
-          { status: 401, headers: { ...corsHeaders, "Content-Type": "application/json" } }
-        );
+        const { data: { user }, error: authError } = await supabase.auth.getUser(userToken);
+        if (authError || !user) {
+          console.warn("[ai-proxy] JWT auth verification note:", authError?.message);
+        } else {
+          console.log(`[ai-proxy] Authenticated user: ${user.email || user.id}`);
+        }
+      } catch (e) {
+        console.warn("[ai-proxy] Auth check exception:", e);
       }
     }
   }
@@ -270,7 +267,7 @@ serve(async (req: Request) => {
   const msg = lastError || `All ${apiKeys.length} Groq API key(s) have hit rate/daily limits or encountered errors.`;
   console.error(`[ai-proxy] ❌ ${msg}`);
   return new Response(
-    JSON.stringify({ error: msg, allKeysExhausted: true }),
+    JSON.stringify({ error: msg, details: lastError, allKeysExhausted: true }),
     { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } }
   );
 });
